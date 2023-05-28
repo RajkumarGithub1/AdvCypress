@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-05-28T09:01:58.053Z",
+    "end": "2023-05-28T09:01:58.308Z",
+    "duration": 255,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1f067746-d6a1-4b63-9d38-37f87cf49394",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic03.cy.js",
+      "file": "cypress\\e2e\\training\\Topic03.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e87a9e2-51b2-4515-b7f8-579fdf15315d",
+          "title": "Topic03_TestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Topic03_TestCase",
+              "fullTitle": "Topic03_TestSuite Topic03_TestCase",
+              "timedOut": null,
+              "duration": 218,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\Topic03.cy.js\\\\Topic03_TestSuite -- Topic03_TestCase (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(Cypress.env(Cypress.env(\"envurl\")));\ncy.title().should(\"contain\", Cypress.env(\"titlekeyword\"));",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n    at Context.visit (http://localhost:58338/__cypress/runner/cypress_runner.js:147295:78)\n    at wrapped (http://localhost:58338/__cypress/runner/cypress_runner.js:160602:43)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:58338/__cypress/tests?p=cypress\\e2e\\training\\Topic03.cy.js:5:10)",
+                "diff": null
+              },
+              "uuid": "4e2e923d-5ab6-4087-893c-2b092c49b81e",
+              "parentUUID": "5e87a9e2-51b2-4515-b7f8-579fdf15315d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4e2e923d-5ab6-4087-893c-2b092c49b81e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 218,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

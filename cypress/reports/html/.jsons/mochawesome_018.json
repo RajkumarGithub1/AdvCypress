@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-28T09:03:23.569Z",
+    "end": "2023-05-28T09:03:27.108Z",
+    "duration": 3539,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b24f80c9-55ce-4fba-8107-60db7ae6d67e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic16.cy.js",
+      "file": "cypress\\e2e\\training\\Topic16.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b10e0ff6-0a25-4961-a707-86cab48e07f2",
+          "title": "Topic16_TestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Topic16_TestCase",
+              "fullTitle": "Topic16_TestSuite Topic16_TestCase",
+              "timedOut": null,
+              "duration": 818,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".ls-btn\").click().should(() => {\n  expect(localStorage.getItem(\"prop1\")).to.eq(\"red\");\n  expect(localStorage.getItem(\"prop2\")).to.eq(\"blue\");\n  expect(localStorage.getItem(\"prop3\")).to.eq(\"magenta\");\n});\ncy.clearLocalStorage().should((ls) => {\n  expect(ls.getItem(\"prop1\")).to.be.null;\n  expect(ls.getItem(\"prop2\")).to.be.null;\n  expect(ls.getItem(\"prop3\")).to.be.null;\n});\ncy.get(\".ls-btn\").click().should(() => {\n  expect(localStorage.getItem(\"prop1\")).to.eq(\"red\");\n  localStorage.setItem(\"prop1\", \"pink\");\n  expect(localStorage.getItem(\"prop1\")).to.eq(\"pink\");\n  expect(localStorage.getItem(\"prop2\")).to.eq(\"blue\");\n  expect(localStorage.getItem(\"prop3\")).to.eq(\"magenta\");\n  localStorage.setItem(\"prop44_local\", \"Yellow\");\n  expect(localStorage.getItem(\"prop44_local\")).to.eq(\"Yellow\");\n  sessionStorage.setItem(\"prop44_session\", \"RGB\");\n  expect(sessionStorage.getItem(\"prop44_session\")).to.eq(\"RGB\");\n});\ncy.clearLocalStorage(\"prop1\").should((ls) => {\n  expect(ls.getItem(\"prop1\")).to.be.null;\n  expect(ls.getItem(\"prop2\")).to.eq(\"blue\");\n  expect(ls.getItem(\"prop3\")).to.eq(\"magenta\");\n});\ncy.get(\".ls-btn\").click().should(() => {\n  expect(localStorage.getItem(\"prop1\")).to.eq(\"red\");\n  expect(localStorage.getItem(\"prop2\")).to.eq(\"blue\");\n  expect(localStorage.getItem(\"prop3\")).to.eq(\"magenta\");\n});\ncy.clearLocalStorage(/prop1|2/).should((ls) => {\n  expect(ls.getItem(\"prop1\")).to.be.null;\n  expect(ls.getItem(\"prop2\")).to.be.null;\n  expect(ls.getItem(\"prop3\")).to.eq(\"magenta\");\n});",
+              "err": {},
+              "uuid": "6cc017e6-43bb-4244-9566-5f93ed51796a",
+              "parentUUID": "b10e0ff6-0a25-4961-a707-86cab48e07f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Topic16_TestCase_2",
+              "fullTitle": "Topic16_TestSuite Topic16_TestCase_2",
+              "timedOut": null,
+              "duration": 265,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(localStorage.getItem(\"prop44_local\")).to.be.null;",
+              "err": {},
+              "uuid": "433655ec-4693-4bb2-860a-29f6d61cfb68",
+              "parentUUID": "b10e0ff6-0a25-4961-a707-86cab48e07f2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6cc017e6-43bb-4244-9566-5f93ed51796a",
+            "433655ec-4693-4bb2-860a-29f6d61cfb68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1083,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

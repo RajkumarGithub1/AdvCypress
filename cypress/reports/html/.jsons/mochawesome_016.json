@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-28T09:02:59.666Z",
+    "end": "2023-05-28T09:03:07.069Z",
+    "duration": 7403,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3afcbada-48c3-4151-bf19-0b87e7b34237",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic14.cy.js",
+      "file": "cypress\\e2e\\training\\Topic14.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c8af4298-a71f-442c-989a-20d19095a807",
+          "title": "Topic14_Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Topic14_Testcase",
+              "fullTitle": "Topic14_Suite Topic14_Testcase",
+              "timedOut": null,
+              "duration": 4824,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.bing.com\");\ncy.get(\"#sb_form_q\").type(\"cypress{downarrow}\", { delay: 400 });\ncy.get(\"div>#sa_ul>li\").should(\"have.length\", 10).as(\"dynamiclist\");\ncy.get(\"@dynamiclist\").each(($item, $index, $allItems) => {\n  cy.log($index + 1 + \" = \" + $item.text());\n});\ncy.get(\"@dynamiclist\").first().then((item) => {\n  cy.log(\"First Item = \" + item.text());\n});\ncy.get(\"@dynamiclist\").last().then((item) => {\n  cy.log(\"Last Item = \" + item.text());\n});\ncy.get(\"@dynamiclist\").eq(4).then((item) => {\n  cy.log(\"5th Item = \" + item.text());\n});\ncy.get(\"@dynamiclist\").eq(4).then((item) => {\n  cy.wrap(item).next().then((nextItem) => {\n    cy.log(\"5th+1 Item = \" + nextItem.text());\n  });\n});\ncy.get(\"@dynamiclist\").eq(4).then((item) => {\n  cy.wrap(item).prev().then((prevItem) => {\n    cy.log(\"5th-1 Item = \" + prevItem.text());\n  });\n});\ncy.get(\"@dynamiclist\").eq(4).then((item) => {\n  cy.wrap(item).parent().then((parent) => {\n    cy.log(\"parent of 5th Item = \" + parent.text());\n  });\n});\ncy.get(\"div>#sa_ul\").get(\"li\").then((allItems) => {\n  cy.log(\"All Li Tags with get method = \" + allItems.length);\n});\ncy.get(\"div>#sa_ul\").find(\"li\").then((allItems) => {\n  cy.log(\"All Li Tags  with find method = \" + allItems.length);\n});\ncy.get(\"div>#sa_ul\").children(\"li\").then((allItems) => {\n  cy.log(\"All Li Tags with children method  = \" + allItems.length);\n});",
+              "err": {},
+              "uuid": "a8e4c25a-7dfd-41f8-a37a-46dd3a4dcab0",
+              "parentUUID": "c8af4298-a71f-442c-989a-20d19095a807",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a8e4c25a-7dfd-41f8-a37a-46dd3a4dcab0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4824,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

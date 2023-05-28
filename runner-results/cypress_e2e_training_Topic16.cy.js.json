@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 2,
+  "passes": 2,
+  "pending": 0,
+  "failures": 0,
+  "start": "2023-05-28T10:11:12.924Z",
+  "duration": 8697,
+  "file": "cypress\\e2e\\training\\Topic16.cy.js"
+}

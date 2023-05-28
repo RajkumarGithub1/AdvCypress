@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-28T09:01:52.151Z",
+    "end": "2023-05-28T09:01:56.375Z",
+    "duration": 4224,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "50367152-9217-49fa-9e7b-8c09a928d4ab",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic02.cy.js",
+      "file": "cypress\\e2e\\training\\Topic02.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+          "title": "Topic02_TestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.getCookie() - get a browser cookie",
+              "fullTitle": "Topic02_TestSuite cy.getCookie() - get a browser cookie",
+              "timedOut": null,
+              "duration": 650,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#getCookie .set-a-cookie\").click();\ncy.getCookie(\"token\").should(\"have.property\", \"value\", \"123ABC\");",
+              "err": {},
+              "uuid": "2b77c4c1-a230-4f86-80de-938d6a7ca961",
+              "parentUUID": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.getCookies() - get browser cookies",
+              "fullTitle": "Topic02_TestSuite cy.getCookies() - get browser cookies",
+              "timedOut": null,
+              "duration": 367,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCookies().should(\"be.empty\");\ncy.get(\"#getCookies .set-a-cookie\").click();\ncy.getCookies().should(\"have.length\", 1).should((cookies) => {\n  expect(cookies[0]).to.have.property(\"name\", \"token\");\n  expect(cookies[0]).to.have.property(\"value\", \"123ABC\");\n  expect(cookies[0]).to.have.property(\"httpOnly\", false);\n  expect(cookies[0]).to.have.property(\"secure\", false);\n  expect(cookies[0]).to.have.property(\"domain\");\n  expect(cookies[0]).to.have.property(\"path\");\n});",
+              "err": {},
+              "uuid": "ddf9d27d-e277-46dd-b4b2-836e9beaa2ef",
+              "parentUUID": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.setCookie() - set a browser cookie",
+              "fullTitle": "Topic02_TestSuite cy.setCookie() - set a browser cookie",
+              "timedOut": null,
+              "duration": 235,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCookies().should(\"be.empty\");\ncy.setCookie(\"foo\", \"bar\");\ncy.getCookie(\"foo\").should(\"have.property\", \"value\", \"bar\");",
+              "err": {},
+              "uuid": "837158e3-d370-40ab-b20a-3b757b25d922",
+              "parentUUID": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.clearCookie() - clear a browser cookie",
+              "fullTitle": "Topic02_TestSuite cy.clearCookie() - clear a browser cookie",
+              "timedOut": null,
+              "duration": 320,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCookie(\"token\").should(\"be.null\");\ncy.get(\"#clearCookie .set-a-cookie\").click();\ncy.getCookie(\"token\").should(\"have.property\", \"value\", \"123ABC\");\ncy.clearCookie(\"token\").should(\"be.null\");\ncy.getCookie(\"token\").should(\"be.null\");",
+              "err": {},
+              "uuid": "9dcd9546-39f1-4ad6-9c66-3b73cd2ce007",
+              "parentUUID": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.clearCookies() - clear browser cookies",
+              "fullTitle": "Topic02_TestSuite cy.clearCookies() - clear browser cookies",
+              "timedOut": null,
+              "duration": 334,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCookies().should(\"be.empty\");\ncy.get(\"#clearCookies .set-a-cookie\").click();\ncy.getCookies().should(\"have.length\", 1);\ncy.clearCookies();\ncy.getCookies().should(\"be.empty\");",
+              "err": {},
+              "uuid": "a933dfd6-5088-416e-945c-4fcda01c75c4",
+              "parentUUID": "d6ec95c0-1146-484c-81ab-7fa49deb7369",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2b77c4c1-a230-4f86-80de-938d6a7ca961",
+            "ddf9d27d-e277-46dd-b4b2-836e9beaa2ef",
+            "837158e3-d370-40ab-b20a-3b757b25d922",
+            "9dcd9546-39f1-4ad6-9c66-3b73cd2ce007",
+            "a933dfd6-5088-416e-945c-4fcda01c75c4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1906,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

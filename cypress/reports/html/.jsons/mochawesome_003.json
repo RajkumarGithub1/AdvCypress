@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-05-28T08:53:34.425Z",
+    "end": "2023-05-28T08:53:39.946Z",
+    "duration": 5521,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4a0cbb5f-4144-4b8c-9ced-40d4edad0902",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic01.cy.js",
+      "file": "cypress\\e2e\\training\\Topic01.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5761d62b-2514-4fab-9583-7cea9cd7c6ac",
+          "title": "Topic01_Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Topic01_Testcase",
+              "fullTitle": "Topic01_Suite Topic01_Testcase",
+              "timedOut": null,
+              "duration": 2395,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\training\\\\Topic01.cy.js\\\\Topic01_Suite -- Topic01_Testcase (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://www.icicibank.com\");\ncy.get(\"#new-header > div > div:nth-child(1) > div > div > nav.left-side-menu.menu-level-1-child > ul\").should(\"be.visible\");\ncy.wait(3e3);\ncy.viewport(\"ipad-mini\");\ncy.wait(3e3);\ncy.get(\"#new-header > div > div:nth-child(1) > div > div > nav.left-side-menu.menu-level-1-child > ul\").should(\"not.be.visible\");\ncy.wait(3e3);\ncy.viewport(1e3, 660);\ncy.wait(3e3);\ncy.get(\"#new-header > div > div:nth-child(1) > div > div > nav.left-side-menu.menu-level-1-child > ul\").should(\"be.visible\");",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'addEventListener')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'addEventListener')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at <unknown> (https://www.icicibank.com/:7778:11)",
+                "diff": null
+              },
+              "uuid": "260f0730-a884-4fe7-9fed-ffddaa9c52b5",
+              "parentUUID": "5761d62b-2514-4fab-9583-7cea9cd7c6ac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "260f0730-a884-4fe7-9fed-ffddaa9c52b5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2395,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

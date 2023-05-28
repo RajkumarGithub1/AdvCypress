@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-28T08:54:40.029Z",
+    "end": "2023-05-28T08:54:56.701Z",
+    "duration": 16672,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bf7075f-cb94-4872-8dae-8f9c0ebaf713",
+      "title": "",
+      "fullFile": "cypress\\e2e\\training\\Topic15.cy.js",
+      "file": "cypress\\e2e\\training\\Topic15.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "792344b7-6f08-4add-8d7b-64919305f43b",
+          "title": "Topic15_TestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Topic15_TestCase",
+              "fullTitle": "Topic15_TestSuite Topic15_TestCase",
+              "timedOut": null,
+              "duration": 13122,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept(\"GET\", \"*showads*\").as(\"matchedAPI_2\");\ncy.intercept(\"POST\", \"*/events/com.amazon*\").as(\"matchedAPI\");\ncy.intercept(\"GET\", \"*prefix=Cypr*\").as(\"SuggestionAPI\");\ncy.visit(\"https://www.amazon.in/\");\ncy.wait(\"@matchedAPI_2\", { timeout: 1e4 }).then((intercept) => {\n  cy.log(intercept.response?.statusCode);\n  expect(intercept.response?.statusCode).to.be.equal(200);\n  cy.log(intercept.request.url);\n  cy.log(intercept.response?.body);\n  cy.log(intercept.state);\n  cy.log(intercept.responseWaited);\n  cy.log(intercept.routeId);\n  cy.log(intercept.id);\n});\ncy.wait(\"@matchedAPI\", { timeout: 1e4 }).then((intercept) => {\n  cy.log(intercept.response?.statusCode);\n  cy.log(intercept.request.url);\n  cy.log(intercept.response?.body);\n  cy.log(intercept.state);\n  cy.log(intercept.responseWaited);\n  cy.log(intercept.routeId);\n  cy.log(intercept.id);\n});\ncy.wait(2e3);\ncy.title().should(\"contain\", \"Amazon\");\ncy.get(\"#searchDropdownBox\").select(\"Books\", { force: true });\ncy.get(\"#twotabsearchtextbox\").type(\"Cypress\");\ncy.wait(\"@SuggestionAPI\", { timeout: 1e4 }).then((intercept) => {\n  cy.log(intercept.response?.statusCode);\n  cy.log(intercept.request.url);\n  cy.log(intercept.response?.body.prefix);\n  cy.log(intercept.response?.body.suggestions[0].suggType);\n  cy.log(intercept.response?.body.suggestions[0].value);\n  cy.log(intercept.state);\n  cy.log(intercept.responseWaited);\n  cy.log(intercept.routeId);\n  cy.log(intercept.id);\n});\ncy.get(\".nav-search-submit.nav-sprite\").click();",
+              "err": {},
+              "uuid": "752361b1-734e-419a-9a85-bcb1c4ddd086",
+              "parentUUID": "792344b7-6f08-4add-8d7b-64919305f43b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "752361b1-734e-419a-9a85-bcb1c4ddd086"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13122,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
